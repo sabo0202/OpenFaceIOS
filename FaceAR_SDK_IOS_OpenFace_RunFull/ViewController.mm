@@ -25,13 +25,15 @@
 @implementation ViewController {
     FaceARDetectIOS *facear;
     int frame_count;
+    GazeInfo gaze;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor blackColor];
+
     // Do any additional setup after loading the view, typically from a nib.
-    self.imageView = [[UIImageView alloc] init];
     self.videoCamera = [[CvVideoCamera alloc] initWithParentView:self.videoView];
     self.videoCamera.delegate = self;
     self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
@@ -70,12 +72,14 @@
         fx = (fx + fy) / 2.0;
         fy = fx;
         
-        blackImage = [[FaceARDetectIOS alloc] run_FaceAR:captureImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
+        //[[FaceARDetectIOS alloc] run_FaceAR:captureImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy gazeInfo__:gaze];
+        gaze = [[FaceARDetectIOS alloc] run_FaceAR:captureImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
         frame_count = frame_count + 1;
     }
     cv::cvtColor(captureImage, image, cv::COLOR_BGRA2RGB);
     //cv::cvtColor(blackImage, image, cv::COLOR_BGRA2RGB);
-    
+    NSLog(@"[左目の視線方向ベクトル]\n "@"%.3f\n" @"%.3f\n" @"%.3f\n", gaze.Direction0.x, gaze.Direction0.y, gaze.Direction0.z);
+
 }
 
 

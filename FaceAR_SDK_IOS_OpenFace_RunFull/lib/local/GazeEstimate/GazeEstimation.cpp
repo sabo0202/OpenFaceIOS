@@ -193,14 +193,15 @@ void GazeEstimate::DrawGaze(cv::Mat img, const LandmarkDetector::CLNF &clnf_mode
 }
 
 
-cv::Vec2f GazeEstimate::GetGazeAngle(cv::Point3f& gaze_vector_1, cv::Point3f& gaze_vector_2)
+cv::Point3f GazeEstimate::GetGazeAngle(cv::Point3f& gaze_vector_1, cv::Point3f& gaze_vector_2)
 {
     
     cv::Point3f gaze_vector = (gaze_vector_1 + gaze_vector_2) / 2;
     
     double x_angle = atan2(gaze_vector.x, -gaze_vector.z);
     double y_angle = atan2(gaze_vector.y, -gaze_vector.z);
+    double z_angle = 0.0;
     
-    return cv::Vec2f(x_angle, y_angle);
+    return cv::Point3f(x_angle, y_angle, z_angle);
     
 }

@@ -77,7 +77,7 @@ cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image
 
 
 //bool run_FaceAR(cv::Mat &captured_image, int frame_count, float fx, float fy, float cx, float cy);
--(cv::Mat) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy
+-(GazeInfo) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy
 {
     // Reading the images
     cv::Mat_<float> depth_image;
@@ -102,28 +102,27 @@ cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image
     // Drawing the facial landmarks on the face and the bounding box around it if tracking is successful and initialised
     double detection_certainty = clnf_model.detection_certainty;
     
-    blackImage = visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
+    visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
+    //blackImage = visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
     
     //////////////////////////////////////////////////////////////////////
     /// gaze EstimateGaze
-    ///
-    cv::Point3f gazeDirection0(0, 0, -1);
-    cv::Point3f gazeDirection1(0, 0, -1);
-    cv::Vec2d gazeAngle(0, 0);
+    //////////////////////////////////////////////////////////////////////
+    GazeInfo gaze = {{0, 0, -1}, {0, 0, -1}, {0, 0, 0}};
+
     cv::cvtColor(blackImage, blackImage, cv::COLOR_BGRA2BGR);
     
     if (det_parameters.track_gaze && detection_success && clnf_model.eye_model)
     {
-        GazeEstimate::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
-        GazeEstimate::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
-        gazeAngle = GazeEstimate::GetGazeAngle(gazeDirection0, gazeDirection1);
+        GazeEstimate::EstimateGaze(clnf_model, gaze.Direction0, fx, fy, cx, cy, true);
+        GazeEstimate::EstimateGaze(clnf_model, gaze.Direction1, fx, fy, cx, cy, false);
+        gaze.Angle = GazeEstimate::GetGazeAngle(gaze.Direction0, gaze.Direction1);
         
-        //GazeEstimate::DrawGaze(blackImage, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
-        GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
-        
+        //GazeEstimate::DrawGaze(blackImage, clnf_model, gaze.Direction0, gaze.Direction1, fx, fy, cx, cy);
+        GazeEstimate::DrawGaze(captured_image, clnf_model, gaze.Direction0, gaze.Direction1, fx, fy, cx, cy);
     }
     
-    return blackImage;
+    return gaze;
 }
 
 //bool reset_FaceAR();

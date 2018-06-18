@@ -31,7 +31,8 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.videoCamera = [[CvVideoCamera alloc] initWithParentView:self.imageView];
+    self.imageView = [[UIImageView alloc] init];
+    self.videoCamera = [[CvVideoCamera alloc] initWithParentView:self.videoView];
     self.videoCamera.delegate = self;
     self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
     self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
@@ -40,7 +41,7 @@
     self.videoCamera.grayscaleMode = NO;
     
     ///////////////////
-//    facear =[[FaceARDetectIOS alloc] init];
+    //    facear =[[FaceARDetectIOS alloc] init];
     
 }
 
@@ -51,27 +52,30 @@
 
 - (void)processImage:(cv::Mat &)image
 {
-    cv::Mat targetImage(image.cols,image.rows,CV_8UC3);
-    cv::cvtColor(image, targetImage, cv::COLOR_BGRA2BGR);
-    if(targetImage.empty()){
-        std::cout << "targetImage empty" << std::endl;
+    cv::Mat blackImage(image.cols,image.rows,CV_8UC3);
+    cv::Mat captureImage(image.cols,image.rows,CV_8UC3);
+    cv::cvtColor(image, captureImage, cv::COLOR_BGRA2BGR);
+    if(captureImage.empty()){
+        std::cout << "captureImage empty" << std::endl;
     }
     else
     {
         float fx, fy, cx, cy;
-        cx = 1.0*targetImage.cols / 2.0;
-        cy = 1.0*targetImage.rows / 2.0;
-    
-        fx = 500 * (targetImage.cols / 640.0);
-        fy = 500 * (targetImage.rows / 480.0);
-    
+        cx = 1.0*captureImage.cols / 2.0;
+        cy = 1.0*captureImage.rows / 2.0;
+        
+        fx = 500 * (captureImage.cols / 640.0);
+        fy = 500 * (captureImage.rows / 480.0);
+        
         fx = (fx + fy) / 2.0;
         fy = fx;
-    
-        [[FaceARDetectIOS alloc] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
+        
+        blackImage = [[FaceARDetectIOS alloc] run_FaceAR:captureImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
         frame_count = frame_count + 1;
     }
-    cv::cvtColor(targetImage, image, cv::COLOR_BGRA2RGB);
+    cv::cvtColor(captureImage, image, cv::COLOR_BGRA2RGB);
+    //cv::cvtColor(blackImage, image, cv::COLOR_BGRA2RGB);
+    
 }
 
 

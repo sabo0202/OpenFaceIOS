@@ -19,7 +19,7 @@
 #include <opencv2/highgui/highgui.hpp>
 
 #include "LandmarkCoreIncludes.h"
-#include "GazeEstimation.h"
+#include "GazeEstimation.h"
 
 @interface FaceARDetectIOS : NSObject
 
@@ -31,7 +31,7 @@
 //-(BOOL) visualise_tracking:(cv::Mat)captured_image depth_image_:(cv::Mat)depth_image face_model_:(const LandmarkDetector::CLNF)face_model det_parameters_:(const LandmarkDetector::FaceModelParameters)det_parameters frame_count_:(int)frame_count fx_:(double)fx fy_:(double)fy cx_:(double)cx cy_:(double)cy;
 
 //bool run_FaceAR(cv::Mat &captured_image, int frame_count, float fx, float fy, float cx, float cy);
--(BOOL) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy;
+-(cv::Mat) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy;
 
 //bool reset_FaceAR();
 -(BOOL) reset_FaceAR;

@@ -13,8 +13,9 @@
 @interface ViewController : UIViewController<CvVideoCameraDelegate>
 
 //- (IBAction)startButtonPressed:(id)sender;
+@property UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *start;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *videoView;
 @property (nonatomic, strong) CvVideoCamera* videoCamera;
 
 @end

@@ -353,7 +353,8 @@
 				TargetAttributes = {
 					83B04F701D2B8BF4008A9370 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = XEXQ6WKSUP;
+						DevelopmentTeam = 6ZBZYMWPVG;
+						ProvisioningStyle = Automatic;
 					};
 					83B04F8C1D2B8BF4008A9370 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -527,7 +528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -565,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -578,6 +579,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ZBZYMWPVG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,9 +588,11 @@
 				);
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "KeeganRen.FaceAR-SDK-IOS-OpenFace-RunFull";
+				PRODUCT_BUNDLE_IDENTIFIER = "ic091232-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/FaceARDetect $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/LandmarkDetector/include $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/GazeEstimate";
 			};
 			name = Debug;
@@ -598,6 +603,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ZBZYMWPVG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,9 +613,11 @@
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "KeeganRen.FaceAR-SDK-IOS-OpenFace-RunFull";
+				PRODUCT_BUNDLE_IDENTIFIER = "ic091232-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/FaceARDetect $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/LandmarkDetector/include $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/GazeEstimate";
 			};
 			name = Release;

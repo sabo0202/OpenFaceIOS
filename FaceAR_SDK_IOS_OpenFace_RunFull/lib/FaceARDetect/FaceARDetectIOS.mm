@@ -14,6 +14,7 @@ LandmarkDetector::CLNF clnf_model;
 
 @implementation FaceARDetectIOS
 
+
 //bool inits_FaceAR();
 -(id) init
 {
@@ -29,12 +30,12 @@ LandmarkDetector::CLNF clnf_model;
     clnf_model.model_location_clnf = [location UTF8String] + std::string("/model/main_clnf_general.txt");
     clnf_model.face_detector_location_clnf = [location UTF8String] + std::string("/classifiers/haarcascade_frontalface_alt.xml");
     clnf_model.inits();
-
+    
     return self;
 }
 
 // Visualising the results
-void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, const LandmarkDetector::CLNF& face_model, const LandmarkDetector::FaceModelParameters& det_parameters, int frame_count, double fx, double fy, double cx, double cy)
+cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, const LandmarkDetector::CLNF& face_model, const LandmarkDetector::FaceModelParameters& det_parameters, int frame_count, double fx, double fy, double cx, double cy)
 //-(BOOL) visualise_tracking:(cv::Mat)captured_image depth_image_:(cv::Mat)depth_image face_model_:(const LandmarkDetector::CLNF)face_model det_parameters_:(const LandmarkDetector::FaceModelParameters)det_parameters frame_count_:(int)frame_count fx_:(double)fx fy_:(double)fy cx_:(double)cx cy_:(double)cy
 {
     
@@ -44,9 +45,12 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     
     double visualisation_boundary = 0.2;
     
+    cv::Mat outputImage = cv::Mat::zeros(captured_image.cols, captured_image.rows, CV_8UC3);
+    
     // Only draw if the reliability is reasonable, the value is slightly ad-hoc
     if (detection_certainty < visualisation_boundary)
     {
+        //LandmarkDetector::Draw(outputImage, face_model);
         LandmarkDetector::Draw(captured_image, face_model);
         
         double vis_certainty = detection_certainty;
@@ -63,17 +67,23 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
         cv::Vec6d pose_estimate_to_draw = LandmarkDetector::GetCorrectedPoseWorld(face_model, fx, fy, cx, cy);
         
         // Draw it in reddish if uncertain, blueish if certain
+        //LandmarkDetector::DrawBox(outputImage, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
         LandmarkDetector::DrawBox(captured_image, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
+        
     }
+    
+    return outputImage;
 }
 
 
 //bool run_FaceAR(cv::Mat &captured_image, int frame_count, float fx, float fy, float cx, float cy);
--(BOOL) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy
+-(cv::Mat) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy
 {
     // Reading the images
     cv::Mat_<float> depth_image;
     cv::Mat_<uchar> grayscale_image;
+    cv::Mat blackImage = cv::Mat::zeros(640, 480, CV_8UC3);
+    
     
     if(captured_image.channels() == 3)
     {
@@ -86,27 +96,34 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     
     // The actual facial landmark detection / tracking
     bool detection_success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, depth_image, clnf_model, det_parameters);
-    //            bool detection_success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, depth_image, clnf_model, det_parameters);
+    //bool detection_success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, depth_image, clnf_model, det_parameters);
     
     // Visualising the results
     // Drawing the facial landmarks on the face and the bounding box around it if tracking is successful and initialised
     double detection_certainty = clnf_model.detection_certainty;
     
-    visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
+    blackImage = visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
     
     //////////////////////////////////////////////////////////////////////
     /// gaze EstimateGaze
     ///
     cv::Point3f gazeDirection0(0, 0, -1);
     cv::Point3f gazeDirection1(0, 0, -1);
+    cv::Vec2d gazeAngle(0, 0);
+    cv::cvtColor(blackImage, blackImage, cv::COLOR_BGRA2BGR);
+    
     if (det_parameters.track_gaze && detection_success && clnf_model.eye_model)
     {
         GazeEstimate::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
         GazeEstimate::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
+        gazeAngle = GazeEstimate::GetGazeAngle(gazeDirection0, gazeDirection1);
+        
+        //GazeEstimate::DrawGaze(blackImage, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
         GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
+        
     }
     
-    return true;
+    return blackImage;
 }
 
 //bool reset_FaceAR();

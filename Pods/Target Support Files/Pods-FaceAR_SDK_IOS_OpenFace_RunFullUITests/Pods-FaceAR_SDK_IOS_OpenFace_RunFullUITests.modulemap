@@ -1,0 +1,6 @@
+framework module Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests {
+  umbrella header "Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

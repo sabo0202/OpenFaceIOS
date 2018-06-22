@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D208539D5B92C13E1CCDA1A /* Pods_FaceAR_SDK_IOS_OpenFace_RunFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6299467997CE122575D4585 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFull.framework */; };
+		375F2F5893D64EEE421656FA /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C4F58B78468A2B80865D35 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullTests.framework */; };
 		8304A0AC1D2BBD0600E2E96B /* FaceARDetectIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8304A0AB1D2BBD0600E2E96B /* FaceARDetectIOS.mm */; };
 		8304A0C81D2BBD1100E2E96B /* CCNF_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8304A0BD1D2BBD1100E2E96B /* CCNF_patch_expert.cpp */; };
 		8304A0C91D2BBD1100E2E96B /* LandmarkDetectionValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8304A0BE1D2BBD1100E2E96B /* LandmarkDetectionValidator.cpp */; };
@@ -22,7 +24,6 @@
 		8304A1951D2BF7B200E2E96B /* model in Resources */ = {isa = PBXBuildFile; fileRef = 8304A1941D2BF7B200E2E96B /* model */; };
 		8304A1971D2BF7C000E2E96B /* classifiers in Resources */ = {isa = PBXBuildFile; fileRef = 8304A1961D2BF7C000E2E96B /* classifiers */; };
 		833EB6C91D2E0B3A0068AB39 /* GazeEstimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 833EB6C61D2E0B3A0068AB39 /* GazeEstimation.cpp */; };
-		83B04F761D2B8BF4008A9370 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B04F751D2B8BF4008A9370 /* main.m */; };
 		83B04F791D2B8BF4008A9370 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83B04F781D2B8BF4008A9370 /* AppDelegate.mm */; };
 		83B04F7C1D2B8BF4008A9370 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83B04F7B1D2B8BF4008A9370 /* ViewController.mm */; };
 		83B04F7F1D2B8BF4008A9370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B04F7D1D2B8BF4008A9370 /* Main.storyboard */; };
@@ -36,6 +37,14 @@
 		83B04FAF1D2B8D73008A9370 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FAE1D2B8D73008A9370 /* CoreMedia.framework */; };
 		83B04FB11D2B8D7C008A9370 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FB01D2B8D7C008A9370 /* AVFoundation.framework */; };
 		83B04FB31D2B8DAD008A9370 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FB21D2B8DAD008A9370 /* opencv2.framework */; };
+		8850B184DC0C62F0C5BB1B0B /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5F22E789DB3D466B5EABA3 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests.framework */; };
+		CA4D70E020DD0A3D0044E5D4 /* WebSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = CA4D70DF20DD0A3C0044E5D4 /* WebSocket.mm */; };
+		CAA6970C20DB831400F3AF64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA6970B20DB831400F3AF64 /* main.m */; };
+		CAA6990C20DC2D5600F3AF64 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA6990B20DC2D5600F3AF64 /* CFNetwork.framework */; };
+		CAA6991220DC2DB600F3AF64 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA6991120DC2DB500F3AF64 /* Security.framework */; };
+		CABF16B720DC2DE2005DF740 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABF16B620DC2DE2005DF740 /* Foundation.framework */; };
+		CABF16C520DC30FC005DF740 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CABF16C420DC30FC005DF740 /* libicucore.dylib */; };
+		CABF16C720DC31D9005DF740 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABF16C620DC31D9005DF740 /* SocketRocket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		035B9A7A3A61292907AFB09F /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests/Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A5F22E789DB3D466B5EABA3 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		415780848D2259F451FD16D7 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAR_SDK_IOS_OpenFace_RunFull.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFull/Pods-FaceAR_SDK_IOS_OpenFace_RunFull.debug.xcconfig"; sourceTree = "<group>"; };
+		5C5E928F1F850AE4D6AB259C /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests/Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8304A0AA1D2BBD0600E2E96B /* FaceARDetectIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceARDetectIOS.h; sourceTree = "<group>"; };
 		8304A0AB1D2BBD0600E2E96B /* FaceARDetectIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceARDetectIOS.mm; sourceTree = "<group>"; };
 		8304A0B01D2BBD1100E2E96B /* CCNF_patch_expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNF_patch_expert.h; sourceTree = "<group>"; };
@@ -86,7 +99,6 @@
 		833EB6C61D2E0B3A0068AB39 /* GazeEstimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GazeEstimation.cpp; sourceTree = "<group>"; };
 		833EB6C71D2E0B3A0068AB39 /* GazeEstimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GazeEstimation.h; sourceTree = "<group>"; };
 		83B04F711D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceAR_SDK_IOS_OpenFace_RunFull.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		83B04F751D2B8BF4008A9370 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83B04F771D2B8BF4008A9370 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83B04F781D2B8BF4008A9370 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		83B04F7A1D2B8BF4008A9370 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -107,6 +119,19 @@
 		83B04FAE1D2B8D73008A9370 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		83B04FB01D2B8D7C008A9370 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		83B04FB21D2B8DAD008A9370 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = FaceAR_SDK_IOS_OpenFace_RunFull/opencv2.framework; sourceTree = "<group>"; };
+		B6B1536B7C4FD7EBCE96C345 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests/Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B7B6A17AC2271C8B4AA74083 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAR_SDK_IOS_OpenFace_RunFull.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFull/Pods-FaceAR_SDK_IOS_OpenFace_RunFull.release.xcconfig"; sourceTree = "<group>"; };
+		CA4D70DE20DD0A3C0044E5D4 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		CA4D70DF20DD0A3C0044E5D4 /* WebSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WebSocket.mm; sourceTree = "<group>"; };
+		CAA6970B20DB831400F3AF64 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CAA6990B20DC2D5600F3AF64 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CAA6991120DC2DB500F3AF64 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CABF16B620DC2DE2005DF740 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CABF16C420DC30FC005DF740 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = ../../../../../usr/lib/libicucore.dylib; sourceTree = "<group>"; };
+		CABF16C620DC31D9005DF740 /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SocketRocket.framework; sourceTree = "<group>"; };
+		D944442B341BADF6FC184B5C /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests/Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.release.xcconfig"; sourceTree = "<group>"; };
+		F6299467997CE122575D4585 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAR_SDK_IOS_OpenFace_RunFull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C4F58B78468A2B80865D35 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAR_SDK_IOS_OpenFace_RunFullTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +139,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABF16C720DC31D9005DF740 /* SocketRocket.framework in Frameworks */,
+				CABF16B720DC2DE2005DF740 /* Foundation.framework in Frameworks */,
+				CAA6991220DC2DB600F3AF64 /* Security.framework in Frameworks */,
+				CAA6990C20DC2D5600F3AF64 /* CFNetwork.framework in Frameworks */,
 				83B04FB31D2B8DAD008A9370 /* opencv2.framework in Frameworks */,
 				83B04FB11D2B8D7C008A9370 /* AVFoundation.framework in Frameworks */,
 				83B04FAF1D2B8D73008A9370 /* CoreMedia.framework in Frameworks */,
+				CABF16C520DC30FC005DF740 /* libicucore.dylib in Frameworks */,
 				83B04FAD1D2B8D65008A9370 /* AssetsLibrary.framework in Frameworks */,
 				83B04FAB1D2B8D5A008A9370 /* CoreData.framework in Frameworks */,
+				2D208539D5B92C13E1CCDA1A /* Pods_FaceAR_SDK_IOS_OpenFace_RunFull.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375F2F5893D64EEE421656FA /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,12 +165,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8850B184DC0C62F0C5BB1B0B /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AB45D1C0D39F82322D18217 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				415780848D2259F451FD16D7 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFull.debug.xcconfig */,
+				B7B6A17AC2271C8B4AA74083 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFull.release.xcconfig */,
+				035B9A7A3A61292907AFB09F /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.debug.xcconfig */,
+				D944442B341BADF6FC184B5C /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.release.xcconfig */,
+				5C5E928F1F850AE4D6AB259C /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.debug.xcconfig */,
+				B6B1536B7C4FD7EBCE96C345 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8304A0A91D2BBD0600E2E96B /* FaceARDetect */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +276,8 @@
 				83B04F901D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests */,
 				83B04F9B1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests */,
 				83B04F721D2B8BF4008A9370 /* Products */,
+				CAA696F120DB73FC00F3AF64 /* Frameworks */,
+				7AB45D1C0D39F82322D18217 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,17 +303,11 @@
 				83B04F851D2B8BF4008A9370 /* LaunchScreen.storyboard */,
 				83B04F881D2B8BF4008A9370 /* Info.plist */,
 				83B04F801D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodeld */,
-				83B04F741D2B8BF4008A9370 /* Supporting Files */,
+				CAA6970B20DB831400F3AF64 /* main.m */,
+				CA4D70DE20DD0A3C0044E5D4 /* WebSocket.h */,
+				CA4D70DF20DD0A3C0044E5D4 /* WebSocket.mm */,
 			);
 			path = FaceAR_SDK_IOS_OpenFace_RunFull;
-			sourceTree = "<group>";
-		};
-		83B04F741D2B8BF4008A9370 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				83B04F751D2B8BF4008A9370 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		83B04F901D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests */ = {
@@ -286,6 +328,21 @@
 			path = FaceAR_SDK_IOS_OpenFace_RunFullUITests;
 			sourceTree = "<group>";
 		};
+		CAA696F120DB73FC00F3AF64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CABF16C620DC31D9005DF740 /* SocketRocket.framework */,
+				CABF16C420DC30FC005DF740 /* libicucore.dylib */,
+				CABF16B620DC2DE2005DF740 /* Foundation.framework */,
+				CAA6991120DC2DB500F3AF64 /* Security.framework */,
+				CAA6990B20DC2D5600F3AF64 /* CFNetwork.framework */,
+				F6299467997CE122575D4585 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFull.framework */,
+				F9C4F58B78468A2B80865D35 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullTests.framework */,
+				1A5F22E789DB3D466B5EABA3 /* Pods_FaceAR_SDK_IOS_OpenFace_RunFullUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,9 +350,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83B04FA11D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFull" */;
 			buildPhases = (
+				15AF58C33870B9D5CFD94975 /* [CP] Check Pods Manifest.lock */,
 				83B04F6D1D2B8BF4008A9370 /* Sources */,
 				83B04F6E1D2B8BF4008A9370 /* Frameworks */,
 				83B04F6F1D2B8BF4008A9370 /* Resources */,
+				C16D8D3919FD9708DA151330 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +369,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83B04FA41D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFullTests" */;
 			buildPhases = (
+				31EDAD370BA6FA0101E3B81D /* [CP] Check Pods Manifest.lock */,
 				83B04F891D2B8BF4008A9370 /* Sources */,
 				83B04F8A1D2B8BF4008A9370 /* Frameworks */,
 				83B04F8B1D2B8BF4008A9370 /* Resources */,
@@ -328,6 +388,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83B04FA71D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFullUITests" */;
 			buildPhases = (
+				1B2C9B05C4BAB56BBEB466CA /* [CP] Check Pods Manifest.lock */,
 				83B04F941D2B8BF4008A9370 /* Sources */,
 				83B04F951D2B8BF4008A9370 /* Frameworks */,
 				83B04F961D2B8BF4008A9370 /* Resources */,
@@ -415,6 +476,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15AF58C33870B9D5CFD94975 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceAR_SDK_IOS_OpenFace_RunFull-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B2C9B05C4BAB56BBEB466CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31EDAD370BA6FA0101E3B81D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16D8D3919FD9708DA151330 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFull/Pods-FaceAR_SDK_IOS_OpenFace_RunFull-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaceAR_SDK_IOS_OpenFace_RunFull/Pods-FaceAR_SDK_IOS_OpenFace_RunFull-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		83B04F6D1D2B8BF4008A9370 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -430,13 +566,14 @@
 				8304A0D21D2BBD1100E2E96B /* SVR_patch_expert.cpp in Sources */,
 				83B04F7C1D2B8BF4008A9370 /* ViewController.mm in Sources */,
 				83B04F791D2B8BF4008A9370 /* AppDelegate.mm in Sources */,
+				CA4D70E020DD0A3D0044E5D4 /* WebSocket.mm in Sources */,
 				8304A0CB1D2BBD1100E2E96B /* LandmarkDetectorModel.cpp in Sources */,
 				8304A0D11D2BBD1100E2E96B /* stdafx.cpp in Sources */,
+				CAA6970C20DB831400F3AF64 /* main.m in Sources */,
 				8304A0CC1D2BBD1100E2E96B /* LandmarkDetectorParameters.cpp in Sources */,
 				8304A0C91D2BBD1100E2E96B /* LandmarkDetectionValidator.cpp in Sources */,
 				8304A0CF1D2BBD1100E2E96B /* PAW.cpp in Sources */,
 				8304A0CD1D2BBD1100E2E96B /* LandmarkDetectorUtils.cpp in Sources */,
-				83B04F761D2B8BF4008A9370 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +651,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -528,6 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -558,6 +697,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -566,6 +706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -575,6 +716,7 @@
 		};
 		83B04FA21D2B8BF4008A9370 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 415780848D2259F451FD16D7 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFull.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -585,20 +727,25 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceAR_SDK_IOS_OpenFace_RunFull",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "ic091232-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/FaceARDetect $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/LandmarkDetector/include $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/GazeEstimate";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/FaceARDetect $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/LandmarkDetector/include $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/GazeEstimate $(PROJECT_DIR)/Pods/SocketRocket";
 			};
 			name = Debug;
 		};
 		83B04FA31D2B8BF4008A9370 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B6A17AC2271C8B4AA74083 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFull.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -609,21 +756,26 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceAR_SDK_IOS_OpenFace_RunFull",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "ic091232-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/FaceARDetect $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/LandmarkDetector/include $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/GazeEstimate";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/FaceARDetect $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/LandmarkDetector/include $(SRCROOT)/FaceAR_SDK_IOS_OpenFace_RunFull/lib/local/GazeEstimate $(PROJECT_DIR)/Pods/SocketRocket";
 			};
 			name = Release;
 		};
 		83B04FA51D2B8BF4008A9370 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 035B9A7A3A61292907AFB09F /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFullTests/Info.plist;
@@ -636,6 +788,7 @@
 		};
 		83B04FA61D2B8BF4008A9370 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D944442B341BADF6FC184B5C /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFullTests/Info.plist;
@@ -648,6 +801,7 @@
 		};
 		83B04FA81D2B8BF4008A9370 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5E928F1F850AE4D6AB259C /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFullUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -659,6 +813,7 @@
 		};
 		83B04FA91D2B8BF4008A9370 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B1536B7C4FD7EBCE96C345 /* Pods-FaceAR_SDK_IOS_OpenFace_RunFullUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFullUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

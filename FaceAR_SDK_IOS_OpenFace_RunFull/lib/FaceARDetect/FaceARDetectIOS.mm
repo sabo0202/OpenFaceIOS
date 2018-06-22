@@ -67,7 +67,6 @@ cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image
         cv::Vec6d pose_estimate_to_draw = LandmarkDetector::GetCorrectedPoseWorld(face_model, fx, fy, cx, cy);
         
         // Draw it in reddish if uncertain, blueish if certain
-        //LandmarkDetector::DrawBox(outputImage, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
         LandmarkDetector::DrawBox(captured_image, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
         
     }
@@ -82,8 +81,6 @@ cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image
     // Reading the images
     cv::Mat_<float> depth_image;
     cv::Mat_<uchar> grayscale_image;
-    cv::Mat blackImage = cv::Mat::zeros(640, 480, CV_8UC3);
-    
     
     if(captured_image.channels() == 3)
     {
@@ -103,14 +100,11 @@ cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image
     double detection_certainty = clnf_model.detection_certainty;
     
     visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
-    //blackImage = visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
     
     //////////////////////////////////////////////////////////////////////
     /// gaze EstimateGaze
     //////////////////////////////////////////////////////////////////////
     GazeInfo gaze = {{0, 0, -1}, {0, 0, -1}, {0, 0, 0}};
-
-    cv::cvtColor(blackImage, blackImage, cv::COLOR_BGRA2BGR);
     
     if (det_parameters.track_gaze && detection_success && clnf_model.eye_model)
     {
@@ -118,7 +112,6 @@ cv::Mat visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image
         GazeEstimate::EstimateGaze(clnf_model, gaze.Direction1, fx, fy, cx, cy, false);
         gaze.Angle = GazeEstimate::GetGazeAngle(gaze.Direction0, gaze.Direction1);
         
-        //GazeEstimate::DrawGaze(blackImage, clnf_model, gaze.Direction0, gaze.Direction1, fx, fy, cx, cy);
         GazeEstimate::DrawGaze(captured_image, clnf_model, gaze.Direction0, gaze.Direction1, fx, fy, cx, cy);
     }
     

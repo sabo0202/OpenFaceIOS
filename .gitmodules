@@ -1,0 +1,6 @@
+[submodule "SocketRocket"]
+	path = SocketRocket
+	url = https://github.com/square/SocketRocket
+[submodule "FaceAR_SDK_IOS_OpenFace_RunFull/SocketRocket"]
+	path = FaceAR_SDK_IOS_OpenFace_RunFull/SocketRocket
+	url = https://github.com/square/SocketRocket

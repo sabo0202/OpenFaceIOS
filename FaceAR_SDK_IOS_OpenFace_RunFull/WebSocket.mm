@@ -22,7 +22,6 @@
     NSMutableDictionary *linear;
     NSMutableDictionary *angular;
 
-
 }
 
 //ソケットの接続とディクショナリの初期設定
@@ -45,13 +44,13 @@
     [msg setObject:linear forKey:@"linear"];
     [msg setObject:angular forKey:@"angular"];
     
-    [linear setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"x"];
-    [linear setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"y"];
-    [linear setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"z"];
+    [linear setObject:[NSNumber numberWithFloat:0.0] forKey:@"x"];
+    [linear setObject:[NSNumber numberWithFloat:0.0] forKey:@"y"];
+    [linear setObject:[NSNumber numberWithFloat:0.0] forKey:@"z"];
     
-    [angular setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"x"];
-    [angular setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"y"];
-    [angular setObject:[NSString stringWithFormat:@"%.3f", gaze.Angle.x - gaze.HeadPose(4)] forKey:@"z"];
+    [angular setObject:[NSNumber numberWithFloat:0.0] forKey:@"x"];
+    [angular setObject:[NSNumber numberWithFloat:0.0] forKey:@"y"];
+    [angular setObject:[NSNumber numberWithFloat:gaze.Angle.x - gaze.HeadPose(4)] forKey:@"z"];
 
     //ソケット
     [webSocket close];
@@ -64,7 +63,9 @@
 }
 
 - (NSString *)updateJsonSend:(GazeInfo)gaze {
-    
+
+    [angular setObject:[NSNumber numberWithFloat:gaze.Angle.x - gaze.HeadPose(4)] forKey:@"z"];
+
     if([NSJSONSerialization isValidJSONObject:dataDic]){
         NSError *error = nil;
         NSData *data = [NSJSONSerialization dataWithJSONObject:dataDic options:NSJSONWritingPrettyPrinted error:&error];
@@ -106,3 +107,4 @@
 }
 
 @end
+

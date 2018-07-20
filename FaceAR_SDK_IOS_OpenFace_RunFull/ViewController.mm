@@ -67,7 +67,7 @@
         fy = fx;
         
         gaze = [[FaceARDetectIOS alloc] run_FaceAR:captureImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
-        //jsonStr = [socket updateJsonSend:(GazeInfo)gaze];
+        jsonStr = [socket updateJsonSend:(GazeInfo)gaze];
         frame_count = frame_count + 1;
     }
     cv::cvtColor(captureImage, image, cv::COLOR_BGRA2RGB);

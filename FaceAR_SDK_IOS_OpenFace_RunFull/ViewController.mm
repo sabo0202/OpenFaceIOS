@@ -23,7 +23,7 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    NSString *url = @"10.10.8.20";
+    NSString *url = @"10.10.7.0";
     socket = [[WebSocket alloc] initJsonConnect:(NSString *)url gaze__:(GazeInfo)gaze];
 
     // Do any additional setup after loading the view, typically from a nib.
@@ -67,13 +67,13 @@
         fy = fx;
         
         gaze = [[FaceARDetectIOS alloc] run_FaceAR:captureImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
-        jsonStr = [socket updateJsonSend:(GazeInfo)gaze];
+        //jsonStr = [socket updateJsonSend:(GazeInfo)gaze];
         frame_count = frame_count + 1;
     }
     cv::cvtColor(captureImage, image, cv::COLOR_BGRA2RGB);
     //cv::cvtColor(blackImage, image, cv::COLOR_BGRA2RGB);
-    NSLog(@"%@", jsonStr);
-    //NSLog(@"[左目の視線方向ベクトル]\n "@"%.3f\n" @"%.3f\n" @"%.3f\n", gaze.Direction0.x, gaze.Direction0.y, gaze.Direction0.z);
+    //NSLog(@"%f", gaze.HeadPose(3));
+    //NSLog(@"%@", jsonStr);
 
 }
 

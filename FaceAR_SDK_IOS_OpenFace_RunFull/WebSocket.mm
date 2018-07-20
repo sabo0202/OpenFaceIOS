@@ -15,45 +15,47 @@
 @implementation WebSocket {
     
     SRWebSocket *webSocket;
-    NSString *returnStr;
-    NSString *jsonStr;
-    
+    NSString *jsonStr, *op, *topic, *type;
+
     NSMutableDictionary *dataDic;
-    NSMutableDictionary *gazeDir0Dic;
-    NSMutableDictionary *gazeDir1Dic;
-    NSMutableDictionary *gazeAglDic;
+    NSMutableDictionary *msg;
+    NSMutableDictionary *linear;
+    NSMutableDictionary *angular;
+
+
 }
 
 //ソケットの接続とディクショナリの初期設定
 - (instancetype)initJsonConnect:(NSString *)strUrl gaze__:(GazeInfo)gaze {
     
+    //文字列の設定
+    op = [NSString stringWithFormat:@"publish"];
+    topic = [NSString stringWithFormat:@"/cmd_vel"];
+    type = [NSString stringWithFormat:@"geometry_msgs/Twist"];
+    
     //ディクショナリ
-    dataDic = [[NSMutableDictionary alloc] init];
+    dataDic  = [[NSMutableDictionary alloc] init];
+    msg = [[NSMutableDictionary alloc] init];
+    linear = [[NSMutableDictionary alloc] init];
+    angular = [[NSMutableDictionary alloc] init];
     
-    gazeDir0Dic = [[NSMutableDictionary alloc] init];
-    gazeDir1Dic = [[NSMutableDictionary alloc] init];
-    gazeAglDic = [[NSMutableDictionary alloc] init];
+    [dataDic setObject:op forKey:@"op"];
+    [dataDic setObject:topic forKey:@"topic"];
+    [dataDic setObject:msg forKey:@"msg"];
+    [msg setObject:linear forKey:@"linear"];
+    [msg setObject:angular forKey:@"angular"];
     
-    [dataDic setObject:gazeDir0Dic forKey:@"gazeDirection0"];
-    [dataDic setObject:gazeDir1Dic forKey:@"gazeDirection1"];
-    [dataDic setObject:gazeAglDic forKey:@"gazeAngle"];
+    [linear setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"x"];
+    [linear setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"y"];
+    [linear setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"z"];
     
-    [gazeDir0Dic setObject:[NSString stringWithFormat:@"%.3f", gaze.Direction0.x] forKey:@"gazeDirection0.x"];
-    [gazeDir0Dic setObject:[NSString stringWithFormat:@"%.3f", gaze.Direction0.y] forKey:@"gazeDirection0.y"];
-    [gazeDir0Dic setObject:[NSString stringWithFormat:@"%.3f", gaze.Direction0.z] forKey:@"gazeDirection0.z"];
-    
-    [gazeDir1Dic setObject:[NSString stringWithFormat:@"%.3f", gaze.Direction1.x] forKey:@"gazeDirection1.x"];
-    [gazeDir1Dic setObject:[NSString stringWithFormat:@"%.3f", gaze.Direction1.y] forKey:@"gazeDirection1.y"];
-    [gazeDir1Dic setObject:[NSString stringWithFormat:@"%.3f", gaze.Direction1.z] forKey:@"gazeDirection1.z"];
-    
-    [gazeAglDic setObject:[NSString stringWithFormat:@"%.3f", gaze.Angle.x] forKey:@"gazeAngle.x"];
-    [gazeAglDic setObject:[NSString stringWithFormat:@"%.3f", gaze.Angle.y] forKey:@"gazeAngle.y"];
-    [gazeAglDic setObject:[NSString stringWithFormat:@"%.3f", gaze.Angle.z] forKey:@"gazeAngle.z"];
-    
-    
+    [angular setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"x"];
+    [angular setObject:[NSString stringWithFormat:@"%.3f", 0.0] forKey:@"y"];
+    [angular setObject:[NSString stringWithFormat:@"%.3f", gaze.Angle.x - gaze.HeadPose(4)] forKey:@"z"];
+
     //ソケット
-    //[webSocket close];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"ws://%@:8080/", strUrl]];
+    [webSocket close];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"ws://%@:9090/", strUrl]];
     webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:url]];
     webSocket.delegate = self;
     [webSocket open];
@@ -62,16 +64,6 @@
 }
 
 - (NSString *)updateJsonSend:(GazeInfo)gaze {
-    
-    gazeDir0Dic[@"gazeDirection0.x"] = [NSString stringWithFormat:@"%.3f", gaze.Direction0.x];
-    gazeDir0Dic[@"gazeDirection0.y"] = [NSString stringWithFormat:@"%.3f", gaze.Direction0.y];
-    gazeDir0Dic[@"gazeDirection0.z"] = [NSString stringWithFormat:@"%.3f", gaze.Direction0.z];
-    gazeDir1Dic[@"gazeDirection1.x"] = [NSString stringWithFormat:@"%.3f", gaze.Direction1.x];
-    gazeDir1Dic[@"gazeDirection1.y"] = [NSString stringWithFormat:@"%.3f", gaze.Direction1.y];
-    gazeDir1Dic[@"gazeDirection1.z"] = [NSString stringWithFormat:@"%.3f", gaze.Direction1.z];
-    gazeAglDic[@"gazeAngle.x"] = [NSString stringWithFormat:@"%.3f", gaze.Angle.x];
-    gazeAglDic[@"gazeAngle.y"] = [NSString stringWithFormat:@"%.3f", gaze.Angle.y];
-    gazeAglDic[@"gazeAngle.z"] = [NSString stringWithFormat:@"%.3f", gaze.Angle.z];
     
     if([NSJSONSerialization isValidJSONObject:dataDic]){
         NSError *error = nil;
@@ -86,8 +78,19 @@
     }
     [webSocket send:jsonStr];
     
+    return jsonStr;
+}
+
+/*
+- (NSString *)updateJsonSend:(GazeInfo)gaze {
+    
+    [webSocket send:@"{\"id\":\"1\"}"];
+    
+    [webSocket send:jsonStr];
+    
     return returnStr;
 }
+*/
 
 
 //サーバに接続したとき
@@ -97,7 +100,7 @@
 
 //サーバからメッセージを受信したとき
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-    returnStr = [NSString stringWithFormat:@"didReceiveMessage: %@\n", message];
+    //returnStr = [NSString stringWithFormat:@"didReceiveMessage: %@\n", message];
     //NSLog(@"didReceiveMessage: %@\n", [message description]);
     //[webSocket send:jsonString];
 }

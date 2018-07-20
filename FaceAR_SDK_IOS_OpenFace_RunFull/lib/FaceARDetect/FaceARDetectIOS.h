@@ -25,6 +25,7 @@ typedef struct GazeInfo{
     cv::Point3f Direction0;
     cv::Point3f Direction1;
     cv::Point3f Angle;
+    cv::Vec6d   HeadPose;
 }GazeInfo;
 
 @interface FaceARDetectIOS : NSObject

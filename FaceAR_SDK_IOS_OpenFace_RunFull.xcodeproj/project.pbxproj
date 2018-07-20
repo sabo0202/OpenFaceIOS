@@ -298,14 +298,14 @@
 				83B04F781D2B8BF4008A9370 /* AppDelegate.mm */,
 				83B04F7A1D2B8BF4008A9370 /* ViewController.h */,
 				83B04F7B1D2B8BF4008A9370 /* ViewController.mm */,
+				CA4D70DE20DD0A3C0044E5D4 /* WebSocket.h */,
+				CA4D70DF20DD0A3C0044E5D4 /* WebSocket.mm */,
 				83B04F7D1D2B8BF4008A9370 /* Main.storyboard */,
 				83B04F831D2B8BF4008A9370 /* Assets.xcassets */,
 				83B04F851D2B8BF4008A9370 /* LaunchScreen.storyboard */,
 				83B04F881D2B8BF4008A9370 /* Info.plist */,
 				83B04F801D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodeld */,
 				CAA6970B20DB831400F3AF64 /* main.m */,
-				CA4D70DE20DD0A3C0044E5D4 /* WebSocket.h */,
-				CA4D70DF20DD0A3C0044E5D4 /* WebSocket.mm */,
 			);
 			path = FaceAR_SDK_IOS_OpenFace_RunFull;
 			sourceTree = "<group>";

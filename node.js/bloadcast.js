@@ -1,19 +1,24 @@
 var WebSocketServer = require('ws').Server
 var wss = new WebSocketServer({
- 	host : '10.239.122.42',
+ 	host : '10.10.0.28',
  	port : 8080
 });
 var connections = [];
+
+wss.broadcast = function (data) {
+ 	for (var i in this.clients) {
+ 		this.clients [i].send (data);
+ 	}
+};
 
 wss.on('connection', function(ws) {
  	connections.push(ws);
  	console.log('connection');
 
- 	ws.on('message', function(message) {
- 		console.log(message);
- 		//broadcast(JSON.stringify(message));
- 		broadcast(message);
- 		//ws.send('Received your json text!');
+ 	ws.on ('message', function (message) {
+        	var now = new Date();
+        	console.log (now.toLocaleString() + ' Received: %s', message);
+        	wss.broadcast (message);
  	});
 
  	ws.on('close', function() {
@@ -23,10 +28,3 @@ wss.on('connection', function(ws) {
  		console.log('close');
     	});
  });
-
-//ブロードキャストを行う
-function broadcast(message) {
-    connections.forEach(function (con, i) {
-        con.send(message);
-    });
-};

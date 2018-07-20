@@ -61,6 +61,8 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/calib3d/calib3d.hpp"
 #include <iostream>
+#include <math.h>
+
 
 #include "GazeEstimation.h"
 
@@ -198,10 +200,23 @@ cv::Point3f GazeEstimate::GetGazeAngle(cv::Point3f& gaze_vector_1, cv::Point3f& 
 
     cv::Point3f gaze_vector = (gaze_vector_1 + gaze_vector_2) / 2;
 
-    double x_angle = atan2(gaze_vector.x, -gaze_vector.z);
-    double y_angle = atan2(gaze_vector.y, -gaze_vector.z);
-    double z_angle = 0.0;
+    double x_radian = atan2(gaze_vector.x, -gaze_vector.z);
+    double y_radian = atan2(gaze_vector.y, -gaze_vector.z);
+    double z_radian = 0.0;
+    
+    double x_degree = x_radian * 180.0 / 3.14159;
+    double y_degree = y_radian * 180.0 / 3.14159;
+    double z_degree = 0.0;
 
-    return cv::Point3f(x_angle, y_angle, z_angle);
+    return cv::Point3f(x_degree, y_degree, z_degree);
 
+}
+
+cv::Vec6d GazeEstimate::GetHeadPose(const LandmarkDetector::CLNF &clnf_model, double fx, double fy, double cx, double cy)
+{
+    
+    cv::Vec6d headPose = LandmarkDetector::GetPoseWorld(clnf_model, fx, fy, cx, cy);
+    
+    return headPose;
+    
 }

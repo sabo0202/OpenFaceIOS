@@ -17,6 +17,8 @@ void DrawGaze(cv::Mat img, const LandmarkDetector::CLNF& clnf_model, cv::Point3f
 cv::Point3f GetPupilPosition(cv::Mat_<double> eyeLdmks3d);
     
 cv::Point3f GetGazeAngle(cv::Point3f& gaze_vector_1, cv::Point3f& gaze_vector_2);
-    
+
+cv::Vec6d GetHeadPose(const LandmarkDetector::CLNF &clnf_model, double fx, double fy, double cx, double cy);
+
 }
 #endif
